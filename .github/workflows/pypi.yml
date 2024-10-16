@@ -7,7 +7,7 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/setup-python@v2
-    - uses: actions/checkout@v2
+    - uses: actions/setup-python@v5
+    - uses: actions/checkout@v4
     - run: pip install poetry
     - run: poetry publish --build -u kolypto -p ${{ secrets.PYPI_PASSWORD }}
