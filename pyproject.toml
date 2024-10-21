@@ -8,13 +8,13 @@ repository = 'https://github.com/kolypto/py-matroska_cache'
 [tool.poetry.dependencies]
 python = "^3.7"
 redis = {version = "^3.0", optional = true}
-sqlalchemy = {version = "^1.3", optional = true}
+sqlalchemy = {version = ">=1.3,<3.0", optional = true}
 
 [tool.poetry.dev-dependencies]
 nox = "^2020.8.22"
 pytest = "^7.4.0"
 pytest-cov = "^2.10.1"
-sqlalchemy = "^1.3.19"
+sqlalchemy = "^2.0.36"
 fakeredis = "^1.4.3"
 
 [tool.pytest.ini_options]
