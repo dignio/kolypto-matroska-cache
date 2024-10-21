@@ -7,7 +7,7 @@ repository = 'https://github.com/kolypto/py-matroska_cache'
 
 [tool.poetry.dependencies]
 python = "^3.7"
-redis = {version = "^3.0", optional = true}
+redis = {version = ">=3,<5", optional = true}
 sqlalchemy = {version = "^1.3", optional = true}
 
 [tool.poetry.dev-dependencies]
