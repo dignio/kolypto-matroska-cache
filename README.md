@@ -1,5 +1,5 @@
 [![Tests](https://github.com/kolypto/py-matroska-cache/workflows/Tests/badge.svg)](/kolypto/py-matroska-cache/actions)
-[![Pythons](https://img.shields.io/badge/python-3.7%E2%80%933.8-blue.svg)](noxfile.py)
+[![Pythons](https://img.shields.io/badge/python-3.14-blue.svg)](noxfile.py)
 
 Matroska Cache with dependency tracking
 =======================================
