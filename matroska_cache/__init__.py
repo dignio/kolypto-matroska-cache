@@ -1,4 +1,6 @@
-__version__ = __import__('pkg_resources').get_distribution('matroska_cache').version
+from importlib.metadata import version
+
+__version__ = version('matroska-cache')
 
 
 from .cache import MatroskaCache

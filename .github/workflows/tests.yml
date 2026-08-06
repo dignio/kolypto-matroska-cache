@@ -16,23 +16,25 @@ on:
 jobs:
   tests:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     #container:
 
     strategy:
       matrix:
-        python-version: ['3.7', '3.8']
+        python-version: ['3.14']
 
     name: ${{ github.ref }}, Python ${{ matrix.python-version }}
     steps:
-    - uses: actions/setup-python@v2
+    - uses: actions/checkout@v6
+    - uses: actions/setup-python@v6
       with:
         python-version: ${{ matrix.python-version }}
-    - uses: actions/checkout@v2
-    - uses: actions/cache@v2
+    - uses: actions/cache@v5
       with:
         path: ./.nox/  # what we cache: nox virtualenv (they're expensive)
-        key: ${{ runner.os }}-nox-2-${{ matrix.python-version }}-${{ hashFiles('**/pyproject.toml', '**/noxfile.py') }}  # cache key
+        key: ${{ runner.os }}-nox-3-${{ matrix.python-version }}-${{ hashFiles('**/pyproject.toml', '**/noxfile.py') }}  # cache key
         restore-keys: |
-          ${{ runner.os }}-nox-2-${{ matrix.python-version }}-
+          ${{ runner.os }}-nox-3-${{ matrix.python-version }}-
     - run: pip install nox
     - run: nox --report nox-report.json
