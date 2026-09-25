@@ -5,7 +5,7 @@ nox.options.reuse_existing_virtualenvs = True
 nox.options.sessions = ['tests']
 
 
-@nox.session(python=['3.14'])
+@nox.session(python=['3.12', '3.13', '3.14'])
 def tests(session: nox.sessions.Session):
     """ Run all tests """
     session.install('poetry')
