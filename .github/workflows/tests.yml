@@ -37,4 +37,4 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-nox-3-${{ matrix.python-version }}-
     - run: pip install nox
-    - run: nox --report nox-report.json
+    - run: nox --python ${{ matrix.python-version }} --report nox-report.json
